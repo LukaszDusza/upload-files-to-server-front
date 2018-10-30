@@ -1,0 +1,37 @@
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+         
+          <table class="table table-stripped table-responsive-md">
+              <thead class="table-danger">
+            <tr>
+               <th>title</th>
+               <th>isbn</th>  
+               <th>author</th>     
+                   
+            </tr>
+            </thead>
+          
+            <tbody>
+            <tr *ngFor="let book of books">
+              <td>{{book.title}}</td>
+              <td>{{book.isbn}}</td>
+              <td>{{book.author}}</td>
+              <td><button class="btn">more</button></td>
+            </tr>
+          </tbody>
+          </table>
+      </div>
+      
+    </div>
+  </div>
+
+ 
+
+
+
+
+
+

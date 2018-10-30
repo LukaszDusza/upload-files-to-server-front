@@ -1,0 +1,38 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+      <label for="upload">upload file:</label>
+
+      <div class="progress" *ngIf="showBar">    
+          <div class="progress-bar bg-success progress-bar-striped" [style.width]="progress + '%'">{{progress}}%</div>                       
+        </div>
+          <div class="alert alert-default" role="alert" *ngIf="showResult">{{result}} </div>
+
+      <div class="form-group">
+      <input class="form-control" type="file" name="file" id="upload" (change)="onSelected($event)" #fileInput>
+    </div>    
+    <button type="button" class="btn btn-sm btn-default" (click)="onUpload()">upload</button>
+  </div>
+  
+  <div class="col-md-6">
+         
+      <table class="table table-stripped table-responsive-md">
+          <thead>
+        <tr>
+           <th>file title</th>  
+           <!-- <th>size</th> -->
+        </tr>
+        </thead>
+      
+        <tbody>
+        <tr *ngFor="let f of fileList">
+          <td>{{f.title}}</td>                               
+          <td><button type="button" class="btn btn-sm btn-default" (click)="onDelete(f.title)">delete</button> </td>
+         
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>
+
+</div>
